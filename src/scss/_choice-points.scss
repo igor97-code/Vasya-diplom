@@ -1,0 +1,162 @@
+.choice-points{
+    margin:0 auto 50px;
+    flex-wrap:wrap;
+    display: flex;
+    justify-content: center;
+    .item{
+        padding:7px;
+        border-radius:3px;
+        color:$colorPurple;
+        border:1px solid $colorPurple;
+        text-transform: uppercase;
+        transition: 0.3s linear;
+        cursor: pointer;
+        margin: 0 7px;
+        font-size: 11px;
+        margin-bottom: 10px;
+        &:hover, &.active {
+            background-color: $colorPurple;
+            color:$colorMain;
+        }
+
+    }
+    @include mobile{
+        margin-bottom: 15px;
+        .item{
+            margin: 0 4px 10px;
+        }
+    }
+
+}
+.points-blocks{
+    margin:0 auto;
+    max-width: 1320px;
+    .choice-points-block{
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin :12px 0;
+        &:before{
+            content: " ";
+            display: block;
+            float: left;
+            margin: 0;
+            padding-top: 35%;
+        }
+
+        &:hover {
+            background: linear-gradient(0deg, rgba(33, 43, 85, 0.7), rgba(33, 43, 85, 0.7));
+            img {
+                transform: scale(1.1);
+                filter: brightness(50%);
+            }
+        }
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s linear;
+        }
+        .info {
+            padding-left: 20px;
+            z-index: 2;
+            position: relative;
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 80%;
+                background: -webkit-gradient(linear, left bottom, left top, from(#595858), to(rgba(0, 0, 0, 0)));
+                background: -webkit-linear-gradient(bottom, #595858, rgba(0, 0, 0, 0));
+                background: -o-linear-gradient(bottom, #595858, rgba(0, 0, 0, 0));
+                background: linear-gradient(0deg, #595858, rgba(0, 0, 0, 0));
+            }
+            h4 {
+                position: relative;
+                color: $colorMain;
+                letter-spacing: 0.03em;
+                margin-bottom: 5px;
+            }
+            span {
+                display: inline-block;
+                position: relative;
+                font-family: $fontBase;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 18px;
+                color: #FFFFFF;
+                margin-bottom: 16px;
+            }
+            p {
+                position: absolute;
+                bottom: -300px;
+                transition: bottom 0.5s linear;
+                font-family: $fontBase;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 178.9%;
+                letter-spacing: 0.03em;
+                color: $colorMain;
+                margin-bottom: 40px;
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .clr{
+        display: none;
+    }
+    @include desktop{
+        .choice-points-block {
+            height: 246px;
+            &:hover {
+                .info {
+                    p {
+                        position: relative;
+                        bottom: 0;
+                    }
+                    span {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+    }
+    @include tablet-mobile{
+        .col.w-33 {
+            width: 50% !important;
+            float: left;
+        }
+    }
+    @include mobile{
+        .choice-points-block {
+            min-height: 175px;
+            .info {
+                padding-left: 6px;
+                h4 {
+                    font-size: 16px;
+                    line-height: 21px;
+                }
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        & ~ .row .button {
+            margin-top: 20px !important;
+        }
+    }
+
+}

@@ -1,0 +1,77 @@
+html {
+    margin: 0;
+    padding: 0;
+    font-family: $fontBase;
+    font-size: 10px;
+    font-weight: 500;
+    color: $colorText;
+    height: 100%;
+    min-height: 640px;
+    background: $colorWhite;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    height: 100%;
+    padding: 0;
+    min-height: 100%;
+    margin: 0;
+    background: $colorWhite;
+}
+
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+.body {
+    min-height: 100%;
+    height: auto !important;
+    min-width: 320px;
+    overflow: hidden;
+    position: relative;
+    z-index: 99;
+    .header-margin {
+        margin-top: 105px;
+    }
+}
+.gallery-slider-open {
+    .body {
+        z-index: 1000;
+        position: inherit;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    padding: 1px 15px;
+    max-width: 1370px;
+    &.relative{
+        position: relative;
+        z-index: 2;
+    }
+    &.fullscreen {
+        max-width: 100%;
+    }
+    &.small{
+        max-width: 490px;
+    }
+
+    &.for-booking {
+        max-width: 960px;
+    }
+
+    @include mobile{
+        padding: 1px 5px;
+    }
+}
+#map {
+    width: 100%;
+    min-height: 582px;
+    @include desktop-small{
+        min-height: 355px;
+    }
+    @include tablet-mobile {
+        min-height: 355px;
+    }
+}
